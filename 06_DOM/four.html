@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width, initial-scale=1.0"> -->
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // cresting
+    function addLanguage(lang){
+        const li = document.createElement("li")
+        li.innerHTML = `${lang}`
+        document.querySelector(".language").appendChild(li)
+    } 
+    addLanguage("java")
+
+    function addOptizedLanguage(lang){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptizedLanguage("go")
+
+    //edit
+    const ele = document.querySelector("li:nth-child(2)")
+    const newEle = document.createElement("li")
+    newEle.innerHTML = "java++"
+    ele.replaceWith(newEle)
+
+    //remove
+    const langName = document.querySelector("li:last-child");
+    langName.remove()
+
+</script>
+</html>
